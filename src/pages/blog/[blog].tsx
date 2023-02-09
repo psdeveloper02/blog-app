@@ -35,15 +35,17 @@ export default function Blog() {
             </Button>
           </Link>
         </div>
-        <Heading size="md">{blog.title}</Heading>
-        <Image
-          borderRadius="20px"
-          src="https://source.unsplash.com/random/1920x1080/?wallpaper,landscape"
-          alt="Blog"
-          height={350}
-          width={"-webkit-fill-available"}
-        />
-        <Text>{blog.body}</Text>
+        <Stack spacing={6}>
+          <Heading size="md">{blog.title}</Heading>
+          <Image
+            borderRadius="20px"
+            src="https://source.unsplash.com/random/1920x1080/?wallpaper,landscape"
+            alt="Blog"
+            height={350}
+            width={"-webkit-fill-available"}
+          />
+          <Text>{blog.body}</Text>
+        </Stack>
       </main>
     </>
   )
