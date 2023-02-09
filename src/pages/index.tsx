@@ -14,8 +14,9 @@ import {
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import { IBlog } from "@/models"
-import { BiShare } from "react-icons/bi"
-import { AiOutlineEye } from "react-icons/ai"
+import { Inter } from "@next/font/google"
+
+const inter = Inter({ subsets: ["latin"] })
 
 export default function Home() {
   const [blogs, setBlogs] = useState([])
@@ -30,8 +31,11 @@ export default function Home() {
 
   return (
     <>
-      <main className={styles.main}>
-        <Heading className={styles.heading}>Blogs</Heading>
+      <main className={`${styles.main} ${inter.className}`}>
+        <div className={styles.heading}>
+          <Heading mb={5}>Blogs</Heading>
+          <Divider />
+        </div>
         <SimpleGrid
           spacing={4}
           templateColumns="repeat(auto-fill, minmax(300px, 1fr))"
@@ -62,27 +66,20 @@ export default function Home() {
               />
               <Stack mt="6" spacing="3">
                 <Heading size="md">{blog.title}</Heading>
-                <Text>{blog.body}</Text>
+                <Text>
+                  This sofa is perfect for modern tropical spaces, baroque
+                  inspired spaces, earthy toned spaces and for people who love a
+                  chic design with a sprinkle of vintage design.
+                </Text>
               </Stack>
             </CardBody>
             <Divider />
-            <CardFooter
-              justify="space-between"
-              flexWrap="wrap"
-              sx={{
-                "& > button": {
-                  minW: "136px",
-                },
-              }}
-            >
+            <CardFooter>
               <Link href={`/blog/${blog.id}`}>
-                <Button flex="1" variant="ghost" leftIcon={<AiOutlineEye />}>
+                <Button variant="solid" colorScheme="blue">
                   View
                 </Button>
               </Link>
-              <Button flex="1" variant="ghost" leftIcon={<BiShare />}>
-                Share
-              </Button>
             </CardFooter>
           </Card>
         ))}

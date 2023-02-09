@@ -27,7 +27,7 @@ export default function Blog() {
 
   return (
     <>
-      <main className={styles.main}>
+      <main className={`${styles.main} ${styles.blogpage}`}>
         <div className={styles.homebutton}>
           <Link href="/">
             <Button flex="1" variant="ghost" leftIcon={<AiOutlineHome />}>
@@ -35,17 +35,15 @@ export default function Blog() {
             </Button>
           </Link>
         </div>
+        <Heading size="md">{blog.title}</Heading>
         <Image
           borderRadius="20px"
           src="https://source.unsplash.com/random/1920x1080/?wallpaper,landscape"
           alt="Blog"
-          height={520}
+          height={350}
           width={"-webkit-fill-available"}
         />
-        <Stack mt="6" spacing="6" width={"100%"}>
-          <Heading size="md">{blog.title}</Heading>
-          <Text>{blog.body}</Text>
-        </Stack>
+        <Text>{blog.body}</Text>
       </main>
     </>
   )

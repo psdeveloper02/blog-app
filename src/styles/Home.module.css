@@ -2,16 +2,20 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
   padding: 6rem;
   min-height: 100vh;
 }
 
 .heading {
-  margin-bottom: 15px;
+  margin-bottom: 50px;
 }
+
 .homebutton {
   text-align: left;
   width: 100%;
   margin-bottom: 10px;
+}
+
+.blogpage {
+  min-height: 80vh;
 }
